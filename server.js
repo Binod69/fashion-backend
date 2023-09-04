@@ -1,9 +1,21 @@
 require('dotenv').config();
 const express = require('express');
+const connectDB = require('./config/db.config');
 const app = express();
+const cors = require('cors');
+
+//RoUTES IMPORT
 const routes = require('./routes/index');
 
+//MONGODB
+connectDB();
+
 app.use(express.json());
+app.use(
+  cors({
+    origin: 'http://localhost:3000',
+  })
+);
 
 //ROUTES
 app.use('/api/v1', routes);
