@@ -92,7 +92,7 @@ const orderSchema = new mongoose.Schema(
       default: 0.0,
     },
     totalPrice: {
-      type: NUmber,
+      type: Number,
       required: true,
       default: 0.0,
     },
@@ -118,4 +118,4 @@ const orderSchema = new mongoose.Schema(
 
 const Order = mongoose.model('Order', orderSchema);
 
-module.exports - Order;
+module.exports = Order;
