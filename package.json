@@ -19,5 +19,8 @@
     "express": "^4.18.2",
     "express-async-handler": "^1.2.0",
     "mongoose": "^7.5.0"
+  },
+  "engine": {
+    "node": "20.4.0"
   }
 }
