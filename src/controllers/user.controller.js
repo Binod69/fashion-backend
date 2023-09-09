@@ -4,7 +4,7 @@ const User = require('../models/user.model');
 //@desc  Auth user & get token
 //@route POST api/v1/users/login
 //@access Public
-const authUser = asyncHandler(async (req, res) => {
+const loginUser = asyncHandler(async (req, res) => {
   res.send('auth user');
 });
 
@@ -65,7 +65,7 @@ const updateUser = asyncHandler(async (req, res) => {
 });
 
 module.exports = {
-  authUser,
+  loginUser,
   registerUser,
   logoutUser,
   getUserProfile,
