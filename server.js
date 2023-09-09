@@ -11,7 +11,14 @@ const routes = require('./routes/index');
 //MONGODB
 connectDB();
 
+//BODY Parser Middleware
 app.use(express.json());
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
+//CORS setting
 app.use(
   cors({
     origin: process.env.FRONTEND_URL,

@@ -5,7 +5,21 @@ const User = require('../models/user.model');
 //@route POST api/v1/users/login
 //@access Public
 const loginUser = asyncHandler(async (req, res) => {
-  res.send('auth user');
+  const { email, password } = req.body;
+
+  const user = await User.findOne({ email });
+
+  if (user && (await user.matchPassword(password))) {
+    res.json({
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      isAdmin: user.isAdmin,
+    });
+  } else {
+    res.status(401);
+    throw new Error('Invalid email or password');
+  }
 });
 
 //@desc  Register User
@@ -40,7 +54,7 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 //@route GET api/v1/users
 //@access Private / Admin
 const getUsers = asyncHandler(async (req, res) => {
-  res.send('user profile updated');
+  res.send('user profile by admin');
 });
 
 //@desc  Get users by id
