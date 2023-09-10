@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const connectDB = require('./config/db.config');
+const cookieParser = require('cookie-parser');
 const app = express();
 const cors = require('cors');
 const { notFound, errorHandler } = require('./src/middleware/error.middleware');
@@ -18,6 +19,10 @@ app.use(
     extended: true,
   })
 );
+
+//Cookie parser middleware
+app.use(cookieParser());
+
 //CORS setting
 app.use(
   cors({

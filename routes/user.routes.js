@@ -12,10 +12,19 @@ const {
   updateUser,
 } = require('../src/controllers/user.controller');
 
-router.route('/').post(registerUser).get(getUsers);
+const { protect, admin } = require('../src/middleware/auth.middleware');
+
+router.route('/').post(registerUser).get(protect, admin, getUsers);
 router.post('/logout', logoutUser);
 router.post('/login', loginUser);
-router.route('/profile').get(getUserProfile).put(updateUserProfile);
-router.route('/:id').get(getUsersByID).delete(deleteUser).put(updateUser);
+router
+  .route('/profile')
+  .get(protect, getUserProfile)
+  .put(protect, updateUserProfile);
+router
+  .route('/:id')
+  .get(protect, admin, getUsersByID)
+  .delete(protect, admin, deleteUser)
+  .put(protect, admin, updateUser);
 
 module.exports = router;
