@@ -14,7 +14,8 @@ const {
 
 const { protect, admin } = require('../src/middleware/auth.middleware');
 
-router.route('/').post(registerUser).get(protect, admin, getUsers);
+router.route('/').get(protect, admin, getUsers);
+router.route('/register').post(registerUser);
 router.post('/logout', logoutUser);
 router.post('/login', loginUser);
 router
