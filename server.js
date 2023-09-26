@@ -2,11 +2,12 @@ require('dotenv').config();
 const express = require('express');
 const connectDB = require('./config/db.config');
 const cookieParser = require('cookie-parser');
-const app = express();
 const cors = require('cors');
 const { notFound, errorHandler } = require('./src/middleware/error.middleware');
 
-//RoUTES IMPORT
+const app = express();
+
+//Routes IMPORT
 const routes = require('./routes/index');
 
 //MONGODB
@@ -26,7 +27,7 @@ app.use(cookieParser());
 //CORS setting
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL,
+    origin: 'http://localhost:3000',
   })
 );
 

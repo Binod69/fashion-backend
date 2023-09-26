@@ -5,6 +5,7 @@ const generateToken = (res, userId) => {
     expiresIn: '30d',
   });
 
+
   // Set JWT as an HTTP-Only cookie
   res.cookie('jwt', token, {
     httpOnly: true,
@@ -15,3 +16,6 @@ const generateToken = (res, userId) => {
 };
 
 module.exports = generateToken;
+
+
+

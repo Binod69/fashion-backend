@@ -55,12 +55,12 @@ const getOrderById = asyncHandler(async (req, res) => {
     'user',
     'name,email'
   );
-  if(order) {
-    res.status(200).json(order)
-  } else[
+  if (order) {
+    res.status(200).json(order);
+  } else {
     res.status(404);
-    throw new Error('Order not found')
-  ]
+    throw new Error('Order not found');
+  }
 });
 
 //@desc Update orders to paid
