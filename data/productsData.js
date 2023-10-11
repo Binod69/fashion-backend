@@ -1,6 +1,6 @@
 const productsData = [
   {
-    title: 'Airpods wireless Bluetooth headphone',
+    name: 'Airpods wireless Bluetooth headphone',
     image:
       'https://images.unsplash.com/photo-1605464315542-bda3e2f4e605?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
     description:
@@ -14,7 +14,7 @@ const productsData = [
     isFeatured: true,
   },
   {
-    title: 'Smartwatch with Heart Rate Monitor',
+    name: 'Smartwatch with Heart Rate Monitor',
     image:
       'https://images.unsplash.com/photo-1579586337278-3befd40fd17a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1744&q=80',
     description:
@@ -28,7 +28,7 @@ const productsData = [
     isFeatured: true,
   },
   {
-    title: 'Wireless Bluetooth Speaker',
+    name: 'Wireless Bluetooth Speaker',
     image: '/images/sony.jpg',
     description:
       'Take your music anywhere with this portable wireless speaker. It offers crisp and clear sound quality with powerful bass. The speaker is compatible with various devices and features a long-lasting battery, making it perfect for outdoor adventures or gatherings.',
@@ -41,7 +41,7 @@ const productsData = [
     isFeatured: true,
   },
   {
-    title: 'Leather Messenger Bag',
+    name: 'Leather Messenger Bag',
     image:
       'https://images.unsplash.com/photo-1505892458649-41be8480bb4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1746&q=80',
     description:
@@ -55,7 +55,7 @@ const productsData = [
     isFeatured: true,
   },
   {
-    title: 'Cotton T-Shirt',
+    name: 'Cotton T-Shirt',
     image:
       'https://images.unsplash.com/photo-1542193810-9007c21cd37e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
     description:
@@ -69,7 +69,7 @@ const productsData = [
     isFeatured: true,
   },
   {
-    title: 'Durable Hiking Backpack',
+    name: 'Durable Hiking Backpack',
     image:
       'https://images.unsplash.com/photo-1600019248002-f4c4898f739b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1742&q=80',
     description:
@@ -83,7 +83,7 @@ const productsData = [
     isFeatured: false,
   },
   {
-    title: 'Professional DSLR Camera',
+    name: 'Professional DSLR Camera',
     image:
       'https://images.unsplash.com/photo-1474376700777-eb547d9bed2f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
     description:
@@ -97,7 +97,7 @@ const productsData = [
     isFeatured: false,
   },
   {
-    title: 'Stainless Steel Watch',
+    name: 'Stainless Steel Watch',
     image:
       'https://images.unsplash.com/photo-1661030418924-52142661241d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
     description:

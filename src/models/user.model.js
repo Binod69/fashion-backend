@@ -20,10 +20,7 @@ const userSchema = new mongoose.Schema(
       required: true,
       minLength: 8,
     },
-    passwordConfirm: {
-      type: String,
-      required: true,
-    },
+
     isAdmin: {
       type: Boolean,
       required: true,

@@ -1,6 +1,9 @@
 require('dotenv').config();
 const express = require('express');
 const connectDB = require('./config/db.config');
+const rateLimiter = require('express-rate-limit');
+const helmet = require('helmet');
+const mongoSanitize = require('express-mongo-sanitize');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const { notFound, errorHandler } = require('./src/middleware/error.middleware');
@@ -13,13 +16,21 @@ const routes = require('./routes/index');
 //MONGODB
 connectDB();
 
-//BODY Parser Middleware
-app.use(express.json());
+//Set security HTTP headers
+app.use(helmet());
+
+//BODY Parser Middleware,reading data from body into req.body
+app.use(express.json({ limit: '10kb' }));
 app.use(
   express.urlencoded({
     extended: true,
   })
 );
+
+//Data sanitization against NOSQL query injection
+app.use(mongoSanitize());
+
+//TODO:Data sanitization against XSS
 
 //Cookie parser middleware
 app.use(cookieParser());
@@ -28,8 +39,16 @@ app.use(cookieParser());
 app.use(
   cors({
     origin: 'http://localhost:3000',
+    credentials: true,
   })
 );
+//API Rate limiter
+const limiter = rateLimiter({
+  max: 100,
+  windowMs: 60 * 60 * 1000, //1 hour
+  message: 'Too many request from this IP, Please try again in an hour',
+});
+app.use('/api', limiter);
 
 //ROUTES
 app.use('/api/v1', routes);

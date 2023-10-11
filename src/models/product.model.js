@@ -7,7 +7,7 @@ const reviewSchema = mongoose.Schema(
       required: true,
       ref: 'User',
     },
-    title: {
+    name: {
       type: String,
       required: true,
     },
@@ -30,7 +30,7 @@ const productSchema = new mongoose.Schema(
       required: true,
       ref: 'User',
     },
-    title: {
+    name: {
       type: String,
       required: true,
     },
